@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ll_to_arr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
+/*   By: vrubio <vrubio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:22:54 by V                 #+#    #+#             */
-/*   Updated: 2022/03/16 18:23:43 by V                ###   ########.fr       */
+/*   Updated: 2022/03/27 12:44:58 by vrubio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int		*ft_opt_arr(t_stack *l, int *arr)
+int	*ft_opt_arr(t_stack *l, int *arr)
 {
-	int		i;
-	int		tmp;
-	
+	int	i;
+	int	tmp;
+
 	arr = ll_to_arr(l, arr);
 	i = 0;
 	while (i < l->size)
 	{
 		if (arr_sorted(arr, l->size))
-			break;
+			break ;
 		if (arr[i] > arr[i + 1])
 		{
 			tmp = arr[i + 1];
@@ -36,10 +36,10 @@ int		*ft_opt_arr(t_stack *l, int *arr)
 	return (arr);
 }
 
-int		arr_sorted(int *arr, int size)
+int	arr_sorted(int *arr, int size)
 {
-	int		i;
-	int		j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < size)
@@ -55,7 +55,7 @@ int		arr_sorted(int *arr, int size)
 	return (1);
 }
 
-int		*ll_to_arr(t_stack *l, int *arr)
+int	*ll_to_arr(t_stack *l, int *arr)
 {
 	int		i;
 	t_node	*ptr;

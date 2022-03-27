@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
+/*   By: vrubio <vrubio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:57:20 by vrubio            #+#    #+#             */
-/*   Updated: 2022/03/16 18:34:02 by V                ###   ########.fr       */
+/*   Updated: 2022/03/27 13:07:02 by vrubio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_array_info
 
 typedef struct s_node
 {
-	int		nb;
+	int				nb;
 	struct s_node	*next;
 	struct s_node	*prev;
 }				t_node;
@@ -94,6 +94,6 @@ int		*ft_opt_arr(t_stack *l, int *arr);
 int		*ll_to_arr(t_stack *l, int *arr);
 void	ft_ar_to_ll(t_stack *l, int *a, int size);
 int		arr_sorted(int *arr, int size);
-void	ptr_2_ptr(t_node *a, t_node *b);
+void	ptr_to_ptr(t_node *a, t_node *b);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   head.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
+/*   By: vrubio <vrubio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:54:43 by vrubio            #+#    #+#             */
-/*   Updated: 2022/03/19 16:29:13 by V                ###   ########.fr       */
+/*   Updated: 2022/03/27 19:24:41 by vrubio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@
 # include <fcntl.h>
 # include "lib/libft.h"
 
-typedef struct	s_struct
+typedef struct s_struct
 {
 	int			*array;
 	int			pos;
 	int			size;
-}				t_array; 
+}				t_array;
 
 typedef struct s_pushswap
 {
@@ -48,18 +48,26 @@ void	ft_print_node_h(t_node *n);
 void	ll_swap(t_stack *l, char c);
 void	ll_rotate(t_stack *l, char c);
 void	ll_rr(t_stack *l, char c);
-void	ll_pushB(t_stack *a, t_stack *b);
-void	ll_pushA(t_stack *a, t_stack *b);
+void	ll_push_b(t_stack *a, t_stack *b);
+void	ll_push_a(t_stack *a, t_stack *b);
 void	ll_ss(t_stack *l, t_stack *lb);
 void	ll_rr2(t_stack *l, t_stack *lb);
 
 void	freenexit(t_ps *game);
-t_array		*ft_validate_ps(int ac, char **args);
+t_array	*ft_validate_ps(int ac, char **args);
 
 void	sort_small_less_than_three(t_stack *l);
 void	sort_small_less_than_six(t_ps *ps);
+int		ft_abs_atoi(const char *s);
 
 void	ft_clr_split(char **str);
 void	ft_exit(void);
+
+//INIT UTILS
+void	init_pushtob_else(t_ps *ps);
+void	init_pushto_b(t_ps *ps);
+void	init_pushto_a_two(t_ps *ps);
+void	init_pushto_a(t_ps *ps);
+void	ll_max_b(t_stack *l, int *max, int *min);
 
 #endif

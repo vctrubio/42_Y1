@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   smallsort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
+/*   By: vrubio <vrubio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:55:27 by V                 #+#    #+#             */
-/*   Updated: 2022/03/19 16:09:09 by V                ###   ########.fr       */
+/*   Updated: 2022/03/27 13:01:41 by vrubio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,28 +40,27 @@ void	sort_small_less_than_three(t_stack *l)
 
 void	sort_small_less_than_six(t_ps *ps)
 {
-	int mean;
+	int	mean;
 
 	mean = ps->a->inf->mean;
-	// printf("MEAN IS %d\n", mean);
-	while(1)
+	while (1)
 	{
 		ft_mmm(ps->a);
 		if (ps->a->tail->nb == ps->a->inf->min)
 			ll_rr(ps->a, 'a');
 		if (ft_check_ll(ps->a) == 1)
-			break;
+			break ;
 		if (ps->a->size <= 3)
 		{
 			sort_small_less_than_three(ps->a);
-			break;
+			break ;
 		}
 		if (ps->a->head->nb <= mean)
-			ll_pushB(ps->a, ps->b);
+			ll_push_b(ps->a, ps->b);
 		else if (ps->a->head->next->nb <= mean)
 		{
 			ll_swap(ps->a, 'a');
-			ll_pushB(ps->a, ps->b);
+			ll_push_b(ps->a, ps->b);
 		}
 		else
 			ll_rotate(ps->a, 'a');

@@ -3,20 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ll_inf.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
+/*   By: vrubio <vrubio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:22:33 by V                 #+#    #+#             */
-/*   Updated: 2022/03/17 00:19:02 by V                ###   ########.fr       */
+/*   Updated: 2022/03/27 19:31:12 by vrubio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int		ll_max(t_stack *l)
+void	ll_max_b(t_stack *l, int *max, int *min)
+{
+	t_node	*ptr;
+
+	ptr = l->tail;
+	*max = ptr->nb;
+	*min = ptr->nb;
+	if (!ptr)
+		return ;
+	while (ptr)
+	{
+		if (ptr->nb > *max)
+			*max = ptr->nb;
+		if (ptr->nb < *min)
+			*min = ptr->nb;
+		ptr = ptr->prev;
+	}
+}
+
+int	ll_max(t_stack *l)
 {
 	t_node	*ptr;
 	int		max;
-	
+
 	ft_mmm(l);
 	ptr = l->tail;
 	max = ptr->nb;
@@ -31,7 +50,7 @@ int		ll_max(t_stack *l)
 	return (max);
 }
 
-int		ll_size(t_stack *l)
+int	ll_size(t_stack *l)
 {
 	int		i;
 	t_node	*ptr;
@@ -44,7 +63,7 @@ int		ll_size(t_stack *l)
 	{
 		i++;
 		if (ptr->next == NULL)
-			break;
+			break ;
 		ptr = ptr->next;
 	}
 	return (i);
@@ -55,13 +74,13 @@ bool	ll_desc(t_stack *l)
 	t_node	*ptr;
 
 	ptr = l->head;
-	while(ptr->next)
+	while (ptr->next)
 	{
 		if (ptr->nb < ptr->next->nb)
 			return (false);
 		ptr = ptr->next;
 	}
-	return true;
+	return (true);
 }
 
 t_node	*ft_rt_node(int i)

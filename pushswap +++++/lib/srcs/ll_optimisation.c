@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ll_optimisation.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
+/*   By: vrubio <vrubio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:23:01 by V                 #+#    #+#             */
-/*   Updated: 2022/03/16 18:23:35 by V                ###   ########.fr       */
+/*   Updated: 2022/03/27 12:58:18 by vrubio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ptr_2_ptr(t_node *a, t_node *b)
+void	ptr_to_ptr(t_node *a, t_node *b)
 {
 	if (b->next)
 		b->next->prev = a;
@@ -25,7 +25,7 @@ void	ptr_2_ptr(t_node *a, t_node *b)
 	a->prev = b;
 }
 
-int		ft_check_ll(t_stack *l)
+int	ft_check_ll(t_stack *l)
 {
 	t_node	*ptr;
 	int		i;
@@ -59,9 +59,9 @@ void	ft_mmm(t_stack *l)
 	arr = malloc(sizeof(int) * l->size);
 	arr = ft_opt_arr(l, arr);
 	if (l->size % 2)
-		l->inf->mean = arr[l->size/2];
-	else 
-		l->inf->mean = arr[(l->size/2) - 1];
+		l->inf->mean = arr[l->size / 2];
+	else
+		l->inf->mean = arr[(l->size / 2) - 1];
 	i = 0;
 	l->inf->min = arr[i];
 	l->inf->max = arr[i];
@@ -75,4 +75,3 @@ void	ft_mmm(t_stack *l)
 	}
 	free(arr);
 }
-

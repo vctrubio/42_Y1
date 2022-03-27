@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
+/*   By: vrubio <vrubio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:55:20 by V                 #+#    #+#             */
-/*   Updated: 2022/03/19 09:54:11 by V                ###   ########.fr       */
+/*   Updated: 2022/03/27 12:58:59 by vrubio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ll_swap(t_stack *l, char c)
 	head = &l->head;
 	tmp = l->head;
 	t2 = tmp->next;
-	ptr_2_ptr(tmp, t2);
+	ptr_to_ptr(tmp, t2);
 	t2->prev = NULL;
 	*head = t2;
 	l->c++;
@@ -47,11 +47,9 @@ void	ll_rotate(t_stack *l, char c)
 	tmp = l->head;
 	t2 = tmp->next;
 	t2->prev = NULL;
-
-	ptr_2_ptr(tmp, l->tail);
+	ptr_to_ptr(tmp, l->tail);
 	*head = t2;
 	*tail = tmp;
-
 	if (c == 'a')
 		write(1, "ra\n", 3);
 	else if (c == 'b')
@@ -86,7 +84,7 @@ void	ll_rr(t_stack *l, char c)
 	l->c++;
 }
 
-void	ll_pushB(t_stack *a, t_stack *b)
+void	ll_push_b(t_stack *a, t_stack *b)
 {
 	t_node	*t2;
 	t_node	*n;
@@ -115,7 +113,7 @@ void	ll_pushB(t_stack *a, t_stack *b)
 	write(1, "pb\n", 3);
 }
 
-void	ll_pushA(t_stack *a, t_stack *b)
+void	ll_push_a(t_stack *a, t_stack *b)
 {
 	t_node	*t2;
 	t_node	*n;
@@ -128,8 +126,6 @@ void	ll_pushA(t_stack *a, t_stack *b)
 		n->prev->next = n->next;
 	if (n->next == NULL && n->prev != NULL)
 		t2 = n->prev;
-	// if (n->next == NULL && n->prev == NULL)
-	// 	t2 = NULL; MAYBE NOT NEEDED
 	n->prev = NULL;
 	n->next = NULL;
 	if (a->head != NULL)

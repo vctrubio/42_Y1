@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   freenexit.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vrubio <vrubio@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/27 12:45:17 by vrubio            #+#    #+#             */
+/*   Updated: 2022/03/27 18:21:49 by vrubio           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../head.h"
 
 void	ft_exit(void)
@@ -8,7 +20,6 @@ void	ft_exit(void)
 
 void	freenexit(t_ps *game)
 {
-	// /* THIS IS BS 
 	if (game->a)
 	{
 		if (game->a->head)
@@ -19,13 +30,11 @@ void	freenexit(t_ps *game)
 	}
 	if (game->b)
 	{
-		// printf("ok\n");
 		if (game->b->head)
 			ft_lst_clear(game->b->head);
 		if (game->b->inf != NULL)
 			free(game->b->inf);
 		free(game->b);
-	} 
-	// */
+	}
 	free(game);
 }
