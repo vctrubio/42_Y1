@@ -12,6 +12,31 @@
 
 #include "../libft.h"
 
+int	ft_abs_atoi(const char *s)
+{
+	int				sign;
+	long long int	n;
+	int				rtn;
+
+	n = 0;
+	sign = 1;
+	while (ft_isspace(*s))
+		s++;
+	if (*s == '-')
+	{
+		sign = -1;
+		s++;
+	}
+	if (*s == '0')
+		return (0);
+	while (*s >= '0' && *s <= '9')
+		n = n * 10 + *(s++) - '0';
+	if (n > 2147483647 || n < -2147483648)
+		ft_exit();
+	rtn = n * sign;
+	return (rtn);
+}
+
 int	ft_atoi(const char *s)
 {
 	int	sign;

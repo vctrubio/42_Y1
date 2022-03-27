@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   ll_clear.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vrubio <vrubio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/27 15:24:55 by vrubio            #+#    #+#             */
-/*   Updated: 2022/03/27 15:25:24 by vrubio           ###   ########.fr       */
+/*   Created: 2022/03/16 18:32:45 by V                 #+#    #+#             */
+/*   Updated: 2022/03/16 18:32:57 by V                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../head.h"
+#include "../libft.h"
 
-//destroy mutext, demalloc, exit
-//nothing fucking ever works here
-void	freenexit(t_info *info)
+void	ft_lst_clear(t_node *n)
 {
-	int	i;
+	t_node *tmp;
 
-	i = -1;
-	while (++i < info->n_philo)
-		pthread_mutex_destroy(info->chp[i].mutex);
-	exit(1);
+	if (!n)
+		return ;
+	while (n)
+	{
+		tmp = n;
+		n = n->next;
+		free(tmp);
+	}
 }

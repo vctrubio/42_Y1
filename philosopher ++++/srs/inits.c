@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   inits.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
+/*   By: vrubio <vrubio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:01:53 by V                 #+#    #+#             */
-/*   Updated: 2022/03/19 15:02:07 by V                ###   ########.fr       */
+/*   Updated: 2022/03/27 15:24:17 by vrubio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	init_sts(t_philo *p)
 
 void	init_philo(t_info *info)
 {
-
 	int	i;
 
 	i = 0;
@@ -67,12 +66,12 @@ t_info	*init_info(char **ag)
 	info->chp = malloc(sizeof(t_chps) * n);
 	info->th = malloc(sizeof(pthread_t) * n);
 	info->n_philo = n;
-	info->t_die = ft_atoi(ag[2]); //1000 no need because ...
+	info->t_die = ft_atoi(ag[2]);
 	info->t_eat = ft_atoi(ag[3]) * 1000;
 	info->t_sleep = ft_atoi(ag[4]) * 1000;
 	if (ag[5])
 		info->max_nmeal = ft_atoi(ag[5]);
-	else 
+	else
 		info->max_nmeal = 0;
 	info->t_start = gettimeofday_ms();
 	init_chp(info);

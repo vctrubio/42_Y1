@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_n_time.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: V <V@student.42.fr>                        +#+  +:+       +#+        */
+/*   By: vrubio <vrubio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:00:21 by V                 #+#    #+#             */
-/*   Updated: 2022/03/19 15:01:10 by V                ###   ########.fr       */
+/*   Updated: 2022/03/27 15:22:12 by vrubio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ uint64_t	time_since_start(void)
 	return (gettimeofday_ms() - start);
 }
 
-void		ft_print_phil(t_philo *philo)
+void	ft_print_phil(t_philo *philo)
 {
 	int			p;
 	uint64_t	timestamp;
-	
+
 	p = philo->pos;
 	timestamp = time_since_start();
 	if (philo->status->dead)

@@ -14,3 +14,4 @@ $(NAME): $(OBJS)
 clean:
 	$(RM) $(NAME)
 
+re: clean all

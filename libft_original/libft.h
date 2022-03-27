@@ -6,7 +6,7 @@
 /*   By: vrubio <vrubio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:57:20 by vrubio            #+#    #+#             */
-/*   Updated: 2022/03/08 16:33:09 by vrubio           ###   ########.fr       */
+/*   Updated: 2022/03/27 15:34:22 by vrubio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,32 @@
 # include <fcntl.h>
 # define BUFFER_SIZE 1
 
+typedef struct s_array_info
+{
+	int		mean;
+	int		min;
+	int		max;
+}				t_ainfo;
+
+typedef struct s_node
+{
+	int		nb;
+	struct s_node	*next;
+	struct s_node	*prev;
+}				t_node;
+
+typedef struct s_stack
+{
+	t_node	*head;
+	t_node	*tail;
+	int		size;
+	bool	sorted;
+	t_ainfo	*inf;
+	int		c;
+}				t_stack;
+
 int		ft_atoi(const char *s);
+int	ft_abs_atoi(const char *s);
 void	ft_bzero(void *str, size_t l);
 int		ft_counter(int n);
 int		ft_is_n_or_a(int c);
@@ -55,5 +80,21 @@ int		ft_wrdcnt(const char *str, char c);
 int		count_words(char *str, char c);
 int		has_newline(char *str);
 int		get_next_line(int fd, char **line);
+t_node	*ft_rt_node(int i);
+t_node	*rt_ll_head(t_node *n);
+t_node	*rt_ll_tail(t_node *n);
+bool	ll_desc(t_stack *l);
+int		ll_size(t_stack *l);
+int		ll_max(t_stack *l);
+void	ft_lst_clear(t_node *n);
+
+void	ft_mmm(t_stack *l);
+int		ft_check_ll(t_stack *l);
+int		head_or_tail(t_stack *l, int nb);
+int		*ft_opt_arr(t_stack *l, int *arr);
+int		*ll_to_arr(t_stack *l, int *arr);
+void	ft_ar_to_ll(t_stack *l, int *a, int size);
+int		arr_sorted(int *arr, int size);
+void	ptr_2_ptr(t_node *a, t_node *b);
 
 #endif
