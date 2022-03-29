@@ -6,12 +6,25 @@
 /*   By: vrubio <vrubio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:47:26 by V                 #+#    #+#             */
-/*   Updated: 2022/03/27 13:17:54 by vrubio           ###   ########.fr       */
+/*   Updated: 2022/03/29 11:47:19 by vrubio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../head.h"
 
+// void	free_abc(char **tmp)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while(tmp[i])
+// 	{
+// 		ft_strfree(&tmp[i]);
+// 		i++;
+// 	}
+// 	free(tmp);
+// 	tmp = 0;
+// }
 static void	ft_abc(char *str, t_array *array)
 {
 	int			nbr;

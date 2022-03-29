@@ -6,7 +6,7 @@
 /*   By: vrubio <vrubio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:54:43 by vrubio            #+#    #+#             */
-/*   Updated: 2022/03/27 19:24:41 by vrubio           ###   ########.fr       */
+/*   Updated: 2022/03/28 12:49:42 by vrubio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ void	ft_clr_split(char **str);
 void	ft_exit(void);
 
 //INIT UTILS
-void	init_pushtob_else(t_ps *ps);
 void	init_pushto_b(t_ps *ps);
 void	init_pushto_a_two(t_ps *ps);
 void	init_pushto_a(t_ps *ps);

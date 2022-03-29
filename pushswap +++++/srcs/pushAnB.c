@@ -6,25 +6,11 @@
 /*   By: vrubio <vrubio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 13:14:09 by vrubio            #+#    #+#             */
-/*   Updated: 2022/03/27 19:31:50 by vrubio           ###   ########.fr       */
+/*   Updated: 2022/03/28 12:50:40 by vrubio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../head.h"
-
-void	init_pushtob_else(t_ps *ps)
-{
-	if (ps->b->head != NULL && ps->b->head != ps->b->tail)
-	{
-		ft_mmm(ps->b);
-		if (ps->b->head->nb < ps->b->inf->mean)
-			ll_rr2(ps->a, ps->b);
-		else
-			ll_rotate(ps->a, 'a');
-	}
-	else
-		ll_rotate(ps->a, 'a');
-}
 
 void	init_pushto_b(t_ps *ps)
 {
@@ -46,7 +32,7 @@ void	init_pushto_b(t_ps *ps)
 		if (ps->a->head->nb < ps->a->inf->mean)
 			ll_push_b(ps->a, ps->b);
 		else
-			init_pushtob_else(ps);
+			ll_rotate(ps->a, 'a');
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: vrubio <vrubio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:10:19 by V                 #+#    #+#             */
-/*   Updated: 2022/03/27 18:21:40 by vrubio           ###   ########.fr       */
+/*   Updated: 2022/03/28 12:58:24 by vrubio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,6 @@ int	ft_abs_atoi(const char *s)
 	return (rtn);
 }
 
-void	ll_print(t_node *tmp)
-{
-
-	t_node *s;
-
-	s = tmp;
-	while(s)
-	{
-		printf("%d ", s->nb);
-		s = s->next;
-	}
-}
-
 static void	do_pushswap(t_ps *pushswap)
 {
 	ft_mmm(pushswap->a);
@@ -61,12 +48,6 @@ static void	do_pushswap(t_ps *pushswap)
 		while (pushswap->a->sorted != true)
 			init_pushto_b(pushswap);
 	init_pushto_a(pushswap);
-
-	if (ft_check_ll(pushswap->a))
-	{
-		ll_print(pushswap->a->head);
-		printf("ture\n");
-	}
 	freenexit(pushswap);
 }
 
@@ -86,7 +67,6 @@ void	ft_free_t_array(t_array *t)
 	t = NULL;
 }
 
-
 int	main(int ac, char **ag)
 {
 	t_ps	*pushswap;
@@ -105,5 +85,3 @@ int	main(int ac, char **ag)
 	ft_free_t_array(rtarray);
 	return (1);
 }
-
-//remove printf(true) after testing.

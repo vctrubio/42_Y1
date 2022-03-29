@@ -6,7 +6,7 @@
 /*   By: vrubio <vrubio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 13:01:52 by vrubio            #+#    #+#             */
-/*   Updated: 2022/03/27 13:02:20 by vrubio           ###   ########.fr       */
+/*   Updated: 2022/03/29 11:50:22 by vrubio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,9 @@ void	ft_clr_split(char **str)
 	while (str[i])
 	{
 		free(str[i]);
+		str[i] = 0;
 		i++;
 	}
 	free(str);
+	str = 0;
 }
